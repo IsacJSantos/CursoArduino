@@ -14,7 +14,6 @@ bool CheckBtnClicked(int, bool&);
 
 void setup() 
 {
-   delay(20);
    pinMode(btnR, INPUT_PULLUP);
    pinMode(btnG, INPUT_PULLUP);
    pinMode(btnB, INPUT_PULLUP);
@@ -26,6 +25,8 @@ void setup()
 
 void loop() 
 {
+  delay(20); // Top avoid contact bounce
+
   if( CheckBtnClicked(btnR, btnRPressed))
     digitalWrite(ledR, digitalRead(ledR) == HIGH ? LOW : HIGH);
 
