@@ -16,5 +16,6 @@ void loop() {
     receivedMessage = Serial.readStringUntil('\n');
     receivedAngle = receivedMessage.toInt();
     Serial.println(receivedAngle);
+    servo.write(receivedAngle);
   }
 }
